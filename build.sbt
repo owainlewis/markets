@@ -10,6 +10,8 @@ libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
+  "org.jsoup" % "jsoup" % "1.8.3",
+  "org.scalaz" %% "scalaz-core" % "7.1.3",
   specs2 % Test
 )
 
