@@ -20,14 +20,14 @@ object Reuters {
 
   private val baseUrl = "http://uk.reuters.com/business/markets/index?symbol=."
 
-  def toDouble(value: String) = value.replace(",", "").toDouble
+  private def toDouble(value: String) = value.replace(",", "").toDouble
 
-  def extractChangePercentage(document: Document): Double = {
+  private [this] def extractChangePercentage(document: Document): Double = {
     val changeText = document.select(".dataParenthetical").asScala.headOption map (_.text)
     changeText.getOrElse("").replace("(", "").replace(")", "").replace("%", "").toDouble
   }
 
-  def extractQuote(document: Document): Option[ReutersStockQuote] = {
+  private [this] def extractQuote(document: Document): Option[ReutersStockQuote] = {
     document.select(".dataHeader").asScala.toVector map (node => toDouble(node.text)) match {
       case Vector(price, change, open, _) =>
         val percentageChange = extractChangePercentage(document)
