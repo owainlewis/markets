@@ -1,4 +1,4 @@
-<configuration>
+gpp<configuration>
     
   <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
 
