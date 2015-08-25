@@ -2,6 +2,8 @@
 
 An API for financial markets.
 
+*Warning* The current method of data extraction is probably illegal and so don't use this for commercial projects.
+
 ## Motivation
 
 Accessing easy to use stock market data is quite a difficult task. Not only is access to data expensive, the companies
