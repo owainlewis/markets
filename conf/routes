@@ -2,7 +2,9 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET /                               controllers.Ping.index
+GET /                               controllers.Home.index
+
+GET /ping                           controllers.Ping.index
 
 GET /api/index                      controllers.IndexController.index
 GET /api/index/:symbol              controllers.IndexController.show(symbol: String)
