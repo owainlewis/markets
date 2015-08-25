@@ -31,7 +31,6 @@ class IndexController extends Controller {
    *
    * @param symbol A stock symbol i.e DJI
    */
-
   def show(symbol: String) = Cached.status(_ => symbol, cacheDuration) {
     Action.async {
       IndexRepository.getQuote(symbol) map { response =>
