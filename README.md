@@ -28,3 +28,18 @@ Get the current price and information for an index (e.g DJI is the symbol for th
 ```
 GET /api/index/:symbol
 ```
+
+Sample response
+
+```json
+{  
+   "symbol":"DJI",
+   "name":"",
+   "quote":{  
+      "price":15871.35,
+      "changePoints":-588.4,
+      "changePercentage":-3.57,
+      "open":16459.8
+   }
+}
+```
