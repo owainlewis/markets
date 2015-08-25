@@ -21,8 +21,8 @@ Look up all major stock indexes
 GET /api/index
 ```
 
-Get the current price and information for an index (e.g the FTSE100)
+Get the current price and information for an index (e.g DJI is the symbol for the Dow Jones Index)
 
 ```
-GET /api/index/FTSE
+GET /api/index/:symbol
 ```
