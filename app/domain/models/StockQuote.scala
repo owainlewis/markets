@@ -5,6 +5,3 @@ case class StockQuote(
   changePoints     : Double,
   changePercentage : Double,
   open             : Double)
-
-
-
