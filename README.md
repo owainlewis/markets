@@ -34,7 +34,7 @@ Sample response
 ```json
 {  
    "symbol":"DJI",
-   "name":"",
+   "name":"Dow Jones Industrial Average",
    "quote":{  
       "price":15871.35,
       "changePoints":-588.4,
