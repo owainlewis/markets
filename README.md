@@ -2,7 +2,7 @@
 
 An API for financial markets.
 
-**Warning** The current method of data extraction is probably illegal and so don't use this for commercial projects.
+**Warning** The current method of data extraction is probably illegal, so don't use this for commercial projects.
 
 ## Motivation
 
