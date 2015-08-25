@@ -23,7 +23,9 @@ A stock index or stock market index is a measurement of the value of a section o
 GET /api/index
 ```
 
-#### Get the current price and information for an index (e.g DJI is the symbol for the Dow Jones Index)
+#### Get the current price and information for an index 
+
+(e.g DJI is the symbol for the Dow Jones Index)
 
 ```
 GET /api/index/:symbol
