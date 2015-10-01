@@ -28,10 +28,8 @@ object Finance {
    */
   def getQuote(symbol: String)(implicit ec: ExecutionContext): Future[\/[Int, YahooStockResponse]] = {
     buildRequest(stockQuoteYQL(symbol)) map { response =>
-      if (response.status == 200) {
-        println(response.body)
+      if (response.status == 200)
         Json.parse(response.body).as[YahooStockResponse].right
-      }
       else response.status.left
     }
   }
