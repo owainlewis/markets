@@ -1,4 +1,10 @@
-# Markets
+# Markets (WIP)
+
+In progress
+
+```
+api/yahoo/quote/^NDX
+```
 
 An API for financial markets.
 

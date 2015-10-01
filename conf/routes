@@ -6,6 +6,8 @@ GET /                               controllers.Home.index
 
 GET /ping                           controllers.Ping.index
 
+GET /api/yahoo/quote/:symbol        controllers.YahooFinance.quote(symbol: String)
+
 GET /api/index                      controllers.IndexController.index
 GET /api/index/:symbol              controllers.IndexController.show(symbol: String)
 

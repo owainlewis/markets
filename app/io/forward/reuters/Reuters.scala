@@ -10,6 +10,7 @@ import scala.concurrent.{ExecutionContext, Future}
 import scalaz.Scalaz._
 
 object Reuters {
+
   import play.api.Play.current
 
   private val baseUrl = "http://uk.reuters.com/business/markets/index?symbol=."
