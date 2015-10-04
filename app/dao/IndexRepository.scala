@@ -1,32 +1,25 @@
 package dao
 
-import domain.models.{IndexQuote, Europe, US, Region}
-import io.forward.reuters.Reuters
-
+import domain.models.IndexQuote
+import io.forward.yahoo.Finance
 import scala.concurrent.{ ExecutionContext, Future }
-
-case class Index(symbol: String, name: String, region: String)
+import scalaz.\/
 
 object IndexRepository {
 
   /**
    * Returns all available stock indexes
    */
-  def all: Vector[Index] = Vector(
-    Index("DJI", "Dow Jones Industrial Average", US.toString),
-    Index("IXIC", "Nasdaq Composite Index", US.toString),
-    Index("SPX", "S&P 500", US.toString),
-    Index("FTSE", "FTSE 100 Index", Europe.toString)
+  def all: Set[String] = Set(
+    "DJI"
   )
 
   /**
    * Fetch a quote for an index
    *
-   * @param symbol A stock index symbol such as FTSE or DJI
+   * @param symbol A stock index symbol such as DJI
    */
-  def getQuote(symbol: String)(implicit ec: ExecutionContext): Future[Option[IndexQuote]] = {
-    Reuters.getQuote(symbol) map { maybeQuote =>
-      maybeQuote map (IndexQuote(symbol, "", _))
-    }
+  def getQuote(symbol: String)(implicit ec: ExecutionContext): Future[\/[Int, IndexQuote]] = {
+    Finance.getQuote("^" ++ symbol) map { _ map IndexQuote.fromYahoo }
   }
 }
