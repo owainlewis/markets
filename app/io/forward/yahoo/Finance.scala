@@ -20,7 +20,18 @@ object Finance {
   def buildRequest(yql: String): Future[WSResponse] =
     WS.url(yahooFinance).withQueryString("q" -> yql, "format" -> "json", "env" -> quoteTable).get()
 
-  def historicalData(symbol: String) = ???
+  /**
+   *
+   * Get historical stock data
+   *
+   * @param symbol Stock symbol
+   * @param start Start date in format
+   * @param end End date in format
+   */
+  def historicalData(symbol: String, start: String = "2013-01-01", end: String = "2015-01-01"): Future[String] = {
+    val query = s"""select * from yahoo.finance.historicaldata where symbol="$symbol" and startDate="$start" and endDate="$end""""
+    buildRequest(query) map { response => response.body }
+  }
 
   /**
    * Fetch a YAHOO stock quote
