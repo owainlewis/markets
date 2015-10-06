@@ -13,6 +13,8 @@ object Finance {
   private val yahooFinance = "https://query.yahooapis.com/v1/public/yql"
 
   private val quoteTable = "store://datatables.org/alltableswithkeys"
+  
+  private val historicalData = "yahoo.finance.historicaldata"
 
   def stockQuoteYQL(symbol: String, table: String = "yahoo.finance.quote"): String =
     s"""select * from $table where symbol=\"$symbol\""""
