@@ -15,5 +15,11 @@ object IndexQuote {
   implicit val format = Json.format[IndexQuote]
 
   def fromYahoo(quote: YahooStockResponse): IndexQuote =
-    IndexQuote(quote.name, quote.symbol, quote.price.toDouble, quote.change.toDouble, quote.dayHigh.toDouble, quote.dayLow.toDouble)
+    IndexQuote(
+      quote.name, 
+      quote.symbol, 
+      quote.price.toDouble, 
+      quote.change.toDouble, 
+      quote.dayHigh.toDouble, 
+      quote.dayLow.toDouble)
 }
